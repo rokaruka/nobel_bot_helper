@@ -3,7 +3,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 main = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text ='Меню',callback_data='menu')],
-    [InlineKeyboardButton(text='Контакты', callback_data= 'contacts'),InlineKeyboardButton(text='Назад',callback_data='back')],
+    [InlineKeyboardButton(text='Контакты', callback_data= 'contacts'),InlineKeyboardButton(text='Nobel',url='https://www.nobel.bar/')],
 ],)
 
 
@@ -13,7 +13,7 @@ inline_kb = InlineKeyboardMarkup(inline_keyboard = [
 ])
 
 
-menu = ['Бар','Кухня','Кальян',]
+menu = ['Бар','Кухня','Кальян','Назад']
 
 
 

@@ -12,10 +12,10 @@ async def cmd_start(message: Message):
     await message.reply(f'Привет \n Твой ID: {message.from_user.id},\n Твое имя: {message.from_user.first_name}',
                         reply_markup=kb.main)
 
-@router.message(Command('start'))
-async def cmd_cocktails(message: Message):
-        await  message.reply('main',
-                        reply_markup=kb.main)
+# @router.message(Command('start'))
+# async def cmd_cocktails(message: Message):
+#         await  message.reply('main',
+#                         reply_markup=kb.main)
 
 
 @router.callback_query(F.data == 'menu')
