@@ -18,9 +18,10 @@ async def cmd_cocktails(message: Message):
                         reply_markup=kb.main)
 
 
-@router.callback_query(F.data == 'start')
+@router.callback_query(F.data == 'menu')
 async def start (callback:CallbackQuery):
-
+    await callback.answer('')
+    await callback.message.edit_text('hello',reply_markup= await kb.inline_menu())
 
 
 

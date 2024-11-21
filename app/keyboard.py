@@ -15,6 +15,8 @@ inline_kb = InlineKeyboardMarkup(inline_keyboard = [
 
 menu = ['Бар','Кухня','Кальян',]
 
+
+
 async def inline_menu ():
     keyboard = InlineKeyboardBuilder()
     for item in menu:
