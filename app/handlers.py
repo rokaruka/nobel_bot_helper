@@ -9,19 +9,29 @@ router = Router()
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
-    await message.reply(f'Привет \n Твой ID: {message.from_user.id},\n Твое имя: {message.from_user.first_name}',
+    await message.answer(f'Привет \n Твой ID: {message.from_user.id},\n Твое имя: {message.from_user.first_name}',
                         reply_markup=kb.main)
 
-# @router.message(Command('start'))
-# async def cmd_cocktails(message: Message):
-#         await  message.reply('main',
-#                         reply_markup=kb.main)
 
 
 @router.callback_query(F.data == 'menu')
 async def start (callback:CallbackQuery):
-    await callback.answer('')
     await callback.message.edit_text('hello',reply_markup= await kb.inline_menu())
 
 
+@router.callback_query(F.data == 'menu_Бар')
+async def menu (callback:CallbackQuery):
+    await callback.message.edit_text('Бар',reply_markup= await kb.bar_menu())
+
+@router.callback_query(F.data == 'menu_Кухня')
+async def menu (callback:CallbackQuery):
+    await callback.message.edit_text('Кухня',reply_markup= await kb.kitchen_menu())
+
+@router.callback_query(F.data == 'bar_item_Назад')
+async def menu (callback:CallbackQuery):
+    await callback.message.edit_text('Меню', reply_markup= await kb.inline_menu())
+
+@router.callback_query(F.data == 'kitchen_item_Назад')
+async def menu (callback:CallbackQuery):
+    await callback.message.edit_text('Меню',reply_markup= await kb.inline_menu())
 
