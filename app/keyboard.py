@@ -13,7 +13,7 @@ inline_kb = InlineKeyboardMarkup(inline_keyboard = [
 ])
 
 
-menu = ['Бар','Кухня','Кальян','Назад']
+menu = ['Бар','Кухня','Кальян','Главная']
 
 kitchen_item =['Салаты','Горячее','Закуски','Назад']
 
